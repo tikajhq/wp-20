@@ -1,0 +1,121 @@
+/**
+ * Notices.
+ */
+.tik-notice {
+	position: relative;
+	padding: 6px 40px 6px 12px;
+}
+
+.tik-notice .links {
+	margin: 0.5em 0;
+}
+
+.tik-notice .links a {
+	margin: 2px;
+}
+
+.tik-notice .links a > span {
+	vertical-align: middle;
+}
+
+.tik-notice .notice-text .coupon-code {
+	display: inline-block;
+}
+
+.tik-notice .notice-dismiss {
+	text-decoration: none;
+}
+
+/**
+ * Welcome notice.
+ */
+.tik-message__content {
+	display: flex;
+	align-items: center;
+}
+
+.tik-message__content .tik-message__image {
+	flex: 0 0 160px;
+	min-height: 100px;
+	margin-right: 12px;
+	padding-right: 12px;
+	border-right: 1px solid #FCFCFD;
+}
+
+.tik-message__content .tik-message__image .tik-screenshot {
+	width: 100%;
+	box-shadow: 0 0 1px 0 #ccd0d4;
+}
+
+.tik-message__content .tik-message__heading {
+	margin-top: 0;
+	margin-bottom: 12px;
+	line-height: 1.4;
+}
+
+.tik-message__content .tik-message__cta {
+	display: flex;
+	align-items: center;
+}
+
+.tik-message__content .tik-message__cta .plugin-install-notice {
+	margin-left: 15px;
+	line-height: 1.4;
+}
+
+.tik-message__content .tik-message__cta a:before {
+	margin: 5px;
+	vertical-align: middle;
+}
+
+a.tik-message-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px 15px 10px 21px;
+	font-size: 13px;
+	line-height: 1.23076923;
+	text-decoration: none;
+}
+
+a.tik-message-close:before {
+	position: absolute;
+	top: 8px;
+	left: 0;
+	-webkit-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+
+@media screen and (max-width: 782px) {
+	.tik-message__image {
+		display: none;
+	}
+}
+
+/**
+ * Dashboard page.
+ */
+.wrap .tik-header {
+	background-color: #fff;
+	padding: 12px 20px;
+	border-bottom: 1px solid #ccd0d4;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.appearance_page_tik-options .wrap {
+	margin-top: 0;
+}
+
+/**
+ * Responsive.
+ */
+@media (max-width: 600px) {
+	.tik-message__content .tik-screenshot {
+		display: none;
+	}
+	.tik-message__content .tik-message__text {
+		padding: 0;
+		width: 100%;
+	}
+}
