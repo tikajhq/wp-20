@@ -1,5 +1,4 @@
-﻿=== Tik ===
-Contributors: themegrill
+﻿=== TIKAJ WP 2020 ===
 Author: Mansoor Ahmad
 Version: 1.1
 Tested up to: 5.4
