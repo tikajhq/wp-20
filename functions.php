@@ -489,11 +489,11 @@ function wpc_elementor_parentID_shortcode( $atts ) {
 }
 add_shortcode( 'show_related_pages', 'wpc_elementor_parentID_shortcode');
 
-// Adding googel fonts {cuz W3TC is creating issues in CSS}
+// Adding google fonts {cuz W3TC is creating issues in CSS}
 
  function myprefix_enqueue_google_fonts() { 
 	wp_enqueue_style( 'Josefin Sans', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap' ); 
-	wp_enqueue_style( 'Lato', 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,300;1,400&display=swap' ); 
+	wp_enqueue_style( 'Lato', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap' ); 
 
 }
 add_action( 'wp_enqueue_scripts', 'myprefix_enqueue_google_fonts' ); 
