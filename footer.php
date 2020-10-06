@@ -68,18 +68,37 @@
 do_action( 'tik_action_after' );
 ?>
 <script>
-	// Adding skelton loading to all megamenu.
-	jQuery( document ).ready(function() {
-		jQuery("#primary-menu > li.menu-item-has-children").addClass("skeleton-loading");
-	});
+	// // Adding skelton loading to all megamenu.
+	// jQuery( document ).ready(function() {
+	// 	jQuery("#primary-menu > li.menu-item-has-children").addClass("skeleton-loading");
+	// });
 
-	// Removing skelton loading on hover, after some time.
-	jQuery("#primary-menu > li.menu-item-has-children").hover(function(){
-		var thisVar = jQuery(this);
-		setTimeout(function(){ 
-			thisVar.removeClass("skeleton-loading");
-		}, 700);
-    });
+	// // Removing skelton loading on hover, after some time.
+	// jQuery("#primary-menu > li.menu-item-has-children").hover(function(){
+	// 	var thisVar = jQuery(this);
+	// 	setTimeout(function(){ 
+	// 		thisVar.removeClass("skeleton-loading");
+	// 	}, 700);
+	// });
+	
+	//For making blog entire clickable
+	function makeDivClickable(e){
+		 // for each selected element
+		 for (var i = 0; i < e.length; i++) {
+        // add click handler
+        e[i].onclick = function() {
+            // get href of first anchor in element and change location
+            window.location = this.querySelectorAll("a")[0].href;
+            return false;
+        };
+    }
+	}
+	window.onload = function() {
+    // get all dom elements with class "feature"
+    var allPosts = document.querySelectorAll(".post-content-wrapper");
+    var allCols = document.querySelectorAll(".elementor-column-wrap");
+	makeDivClickable(allPosts);
+}; 
 </script>
 <?php wp_footer(); ?>
 

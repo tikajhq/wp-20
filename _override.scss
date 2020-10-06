@@ -41,7 +41,7 @@
   
     .entry-title {
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
@@ -74,6 +74,8 @@
         padding: 4px 8px;
         margin-right: 8px;
         margin-bottom: 8px;
+        white-space: nowrap;
+
         > a{
             font-size: 1rem;
         }
@@ -119,12 +121,13 @@
         li{
             display: inline-block;
             &:not(:last-child){
-                margin-right: 5px;
+                margin-right: 8px;
             }
         }
       i {
         font-family: fontawesome;
         font-weight: unset;
+        font-size:1.2rem;
       }
     }
   }
@@ -238,9 +241,9 @@
               padding: 20px;
               opacity: 0;
               visibility: hidden;
-              border: none;
+              // border: none;
               overflow-y: auto;
-              @extend .menu-transition;
+              // @extend .menu-transition;
               * {
                 opacity: 0;
                 @extend .menu-transition;
@@ -251,12 +254,15 @@
                 text-transform: unset;
               }
               background: $section_dark;
+              box-shadow: 0px 15px 33px 0px rgba(0,0,0,0.11);
               width: 100%;
               left: 50%;
               // top:84%;
+              // display:none;
               max-width: 1200px;
-              transform: translate(-50%, 10%);
-              transition-duration: 0.1s;
+              transform: translate(-50%, 10px);
+              // transition-duration: 0.1s;
+              // transition: opacity 200ms ease-in, transform 200ms ease-in, visibility 200ms ease-in;
               min-height: 10vh;
               max-height: 88vh;
                   height: auto;
@@ -341,8 +347,9 @@
                 opacity: 1;
                 visibility: visible;
                 height: auto;
+                display:block;
                 transform: translate(-50%,0%);
-                transition-duration: 0.4s;
+                // transition-duration: 0.4s;
                 // transition: all 0s ease-in-out;
                 // -moz-transition: all 0s ease-in-out;
                 // &::before{
@@ -484,7 +491,13 @@ body, p{
 }
 h1,h1>a{font-size: 2.6rem;font-weight: 700;font-family: $heading_font;}
 h2,h2>a{font-size: 1.8rem;font-weight: 600;font-family: $heading_font;}
-h3,h3>a{font-size: 1.7rem;font-weight: 600;font-family: $heading_font;}
-h4,h4>a{font-size: 1.5rem;font-weight: 500;font-family: $heading_font;}
+h3,h3>a{font-size: 1.6rem;font-weight: 600;font-family: $heading_font;}
+h4,h4>a{font-size: 1.4rem;font-weight: 500;font-family: $heading_font;}
 h5,h5>a{font-size: 1.2rem;font-weight: 500;font-family: $heading_font;}
 h6,h6>a{font-size: $body_font_size;font-weight: 500;font-family: $heading_font;}
+h1{
+  margin-bottom:16px;
+}
+h2,h3,h4,h5,h6{
+  margin-bottom:0px;
+}
