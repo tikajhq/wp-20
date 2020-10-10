@@ -29,6 +29,9 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 		<?php echo apply_filters( 'tik_after_primary_end_filter', false ); // // WPCS: XSS OK. ?>
+     	<?php if ( is_active_sidebar( 'footer-post' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-post' ); ?>
+		<?php endif; ?>
 	</div><!-- #primary -->
 
 <?php

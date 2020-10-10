@@ -163,6 +163,7 @@ class Tik_Meta_Box_Page_Settings {
 	                                'footer-sidebar-2' => __( 'Footer Two', 'tik' ),
 	                                'footer-sidebar-3' => __( 'Footer Three', 'tik' ),
 	                                'footer-sidebar-4' => __( 'Footer Four', 'tik' ),
+									'footer-post'      => __( 'Post Footer', 'tik' ),
                                 );
 
                                 foreach ( $sidebars as $sidebar_id => $sidebar_label ) :
@@ -448,6 +449,7 @@ class Tik_Meta_Box_Page_Settings {
 				'footer-sidebar-2',
 				'footer-sidebar-3',
 				'footer-sidebar-4',
+				'footer-post'
 			), true ) ) {
 			update_post_meta( $post_id, 'tik_sidebar', $sidebar );
 		} else {

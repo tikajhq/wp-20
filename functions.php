@@ -96,8 +96,7 @@ function tik_widgets_init() {
 		'footer-sidebar-2'         => esc_html__( 'Footer Two', 'tik' ),
 		'footer-sidebar-3'         => esc_html__( 'Footer Three', 'tik' ),
 		'footer-sidebar-4'         => esc_html__( 'Footer Four', 'tik' ),
-		'footer-bar-left-sidebar'  => esc_html__( 'Footer Bottom Bar Left Sidebar', 'tik' ),
-		'footer-bar-right-sidebar' => esc_html__( 'Footer Bottom Bar Right Sidebar', 'tik' ),
+		'footer-post'              => esc_html__( 'Footer of Post', 'tik' ),
 	) );
 
 	if ( tik_is_woocommerce_active() ) {
