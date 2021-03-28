@@ -496,3 +496,12 @@ add_shortcode( 'show_related_pages', 'wpc_elementor_parentID_shortcode');
 
 }
 add_action( 'wp_enqueue_scripts', 'myprefix_enqueue_google_fonts' ); 
+
+// Redirecting Urls
+add_action( 'template_redirect', 'redirect_to_vapt' );
+function redirect_to_vapt() {
+    if ( is_page('/services/penetration-testing-vulnerability-assessment/') && ! is_user_logged_in() ) {
+      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/'); 
+	  exit;
+    }
+}
