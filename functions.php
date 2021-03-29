@@ -498,10 +498,33 @@ add_shortcode( 'show_related_pages', 'wpc_elementor_parentID_shortcode');
 add_action( 'wp_enqueue_scripts', 'myprefix_enqueue_google_fonts' ); 
 
 // Redirecting Urls
-add_action( 'template_redirect', 'redirect_to_vapt' );
 function redirect_to_vapt() {
-    if ( is_page('/services/penetration-testing-vulnerability-assessment/') && ! is_user_logged_in() ) {
+    if ( is_page('services/penetration-testing-vulnerability-assessment/') && ! is_user_logged_in() ) {
       wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/'); 
 	  exit;
     }
+	else if ( is_page('services/penetration-testing-vulnerability-assessment/web-application-testing/') && ! is_user_logged_in() ) {
+      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/web-application-testing/'); 
+	  exit;
+    }
+	else if ( is_page('services/penetration-testing-vulnerability-assessment/mobile-application-testing/') && ! is_user_logged_in() )     	  {
+      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/web-application-testing/'); 
+	  exit;
+    }
+	
+	else if ( is_page('services/penetration-testing-vulnerability-assessment/internet-of-things-testing/') && ! is_user_logged_in() )     	  {
+      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/internet-of-things-testing/'); 
+	  exit;
+    }
+	
+	else if ( is_page('services/penetration-testing-vulnerability-assessment/scada/') && ! is_user_logged_in() )     	  {
+      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/scada/'); 
+	  exit;
+    }
+	
+	else if ( is_page('services/penetration-testing-vulnerability-assessment/code-review/') && ! is_user_logged_in() )     	  {
+      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/code-review/'); 
+	  exit;
+    }
 }
+add_action( 'template_redirect', 'redirect_to_vapt' );
