@@ -225,7 +225,7 @@ if ( ! function_exists( 'tik_mobile_navigation' ) ) :
 	 */
 	function tik_mobile_navigation() {
 		?>
-		<nav id="mobile-navigation" class="<?php tik_css_class( 'tik_mobile_nav_class' ); ?>"
+		<div id="mobile-navigation" class="<?php tik_css_class( 'tik_mobile_nav_class' ); ?>"
 			<?php echo wp_kses_post( apply_filters( 'tik_nav_data_attrs', '' ) ); ?>>
 
 			<?php wp_nav_menu(
@@ -236,7 +236,7 @@ if ( ! function_exists( 'tik_mobile_navigation' ) ) :
 			);
 			?>
 
-		</nav><!-- /#mobile-navigation-->
+		</div><!-- /#mobile-navigation-->
 		<?php
 	}
 endif;

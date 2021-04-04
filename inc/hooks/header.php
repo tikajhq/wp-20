@@ -307,7 +307,7 @@ if ( ! function_exists( 'tik_header_main_site_navigation' ) ) :
 			return;
 		}
 		?>
-		<nav id="site-navigation" class="<?php tik_css_class( 'tik_nav_class' ); ?> <?php tik_primary_menu_class(); ?>">
+		<nav role="navigation" itemscope itemtype="https://schema.org/WPHeader" id="site-navigation" class="<?php tik_css_class( 'tik_nav_class' ); ?> <?php tik_primary_menu_class(); ?>">
 				<?php
 				wp_nav_menu(
 					array(
@@ -331,7 +331,7 @@ if ( ! function_exists( 'tik_header_main_action' ) ) :
 	function tik_header_main_action() {
 		$mobile_menu_label = get_theme_mod( 'tik_mobile_menu_text', '' );
 		?>
-		<nav id="header-action" class="<?php tik_css_class( 'tik_header_action_class' ); ?>">
+		<div id="header-action" class="<?php tik_css_class( 'tik_header_action_class' ); ?>">
 			<ul class="tg-header-action-list">
 
 				<li class="tg-header-action__item tg-mobile-toggle" <?php echo wp_kses_post( apply_filters( 'tik_nav_toggle_data_attrs', '' ) ); ?>>
@@ -345,7 +345,7 @@ if ( ! function_exists( 'tik_header_main_action' ) ) :
 				<!-- /.tg-mobile-toggle -->
 			</ul>
 			<!-- /.tik-header-action-list -->
-		</nav><!-- #header-action -->
+		</div><!-- #header-action -->
 				<?php
 	}
 endif;
