@@ -16,7 +16,7 @@ if ( ! function_exists( 'tik_posted_on' ) ) :
 		$meta_style = get_theme_mod( 'tik_blog_archive_meta_style', 'tg-meta-style-one' );
 
 		/* translators: %s: post date. */
-		$date_text = ( 'tg-meta-style-one' === $meta_style ) ? esc_html_x( 'Posted on %s', 'post date', 'tik' ) : '%s';
+		$date_text = ( 'tg-meta-style-one' === $meta_style ) ? esc_html_x( 'Published on %s', 'post date', 'tik' ) : '%s';
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
@@ -41,26 +41,41 @@ if ( ! function_exists( 'tik_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'tik_posted_by' ) ) :
-	/**
-	 * Prints HTML with meta information for the current author.
-	 */
-	function tik_posted_by() {
 
-		$meta_style = get_theme_mod( 'tik_blog_archive_meta_style', 'tg-meta-style-one' );
+if ( ! function_exists( 'tik_posted_by' ) ) :
+    /**
+     * Prints HTML with meta information for the current author.
+     */
+    function tik_posted_by() {
+
+        $meta_style = get_theme_mod( 'tik_blog_archive_meta_style', 'tg-meta-style-one' );
+        $author_id = get_the_author_meta( 'ID' );
+        $author_display_name = get_the_author_meta( 'display_name', $author_id );
+        $author_bio = get_the_author_meta( 'description', $author_id );
+        $author_avatar = get_avatar( $author_id, 96 );
 
 		/* translators: %s: post author. */
 		$author_text = ( 'tg-meta-style-one' === $meta_style ) ? esc_html_x( 'By %s', 'post author', 'tik' ) : '%s';
 
-		$byline = sprintf(
-			$author_text,
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
+        $output = '';
+        if ( ! empty( $author_bio ) ) {
+            $output .= '<div class="author-box">';
+            $output .= '<div class="author-avatar">' . $author_avatar . '</div>';
+            $output .= '<div class="author-info">';
+            $output .= '<h4 class="author-name">' . $author_display_name . '</h4>';
+            $output .= '<div class="author-bio">' . $author_bio . '</div>';
+            $output .= '</div>';
+            $output .= '</div>';
+        } else {
+            /* translators: %s: post author. */
+            $output .= sprintf(
+                $author_text,
+                '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+            );
+        }
 
-
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
-	}
+        echo '<span class="byline"> ' . $output . '</span>'; // WPCS: XSS OK.
+    }
 endif;
 
 if ( ! function_exists( 'tik_posted_in' ) ) :
@@ -72,7 +87,7 @@ if ( ! function_exists( 'tik_posted_in' ) ) :
 		$meta_style = get_theme_mod( 'tik_blog_archive_meta_style', 'tg-meta-style-one' );
 
 		/* translators: 1: list of categories. */
-		$catgories_text = ( 'tg-meta-style-one' === $meta_style ) ? esc_html__( 'Posted in %1$s', 'tik' ) : '%1$s';
+		$catgories_text = ( 'tg-meta-style-one' === $meta_style ) ? esc_html__( '%1$s', 'tik' ) : '%1$s';
 
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
