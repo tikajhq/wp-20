@@ -1,9 +1,8 @@
 <?php
 /**
- * Tik functions and definitions
+ * TIKAJ functions and definitions
  *
  * @link    https://developer.wordpress.org/themes/basics/theme-functions/
- *
  * @package tik
  */
 
@@ -99,10 +98,6 @@ function tik_widgets_init() {
 		'footer-post'              => esc_html__( 'Footer of Post', 'tik' ),
 	) );
 
-	if ( tik_is_woocommerce_active() ) {
-		$sidebars['wc-left-sidebar']  = esc_html__( 'WooCommerce Left Sidebar', 'tik' );
-		$sidebars['wc-right-sidebar'] = esc_html__( 'WooCommerce Right Sidebar', 'tik' );
-	}
 
 	foreach ( $sidebars as $id => $name ) {
 		register_sidebar( array(
@@ -203,12 +198,6 @@ require TIK_PARENT_INC_DIR . '/class-tik-css-classes.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require TIK_PARENT_INC_DIR . '/jetpack.php';
 }
-
-// WooCommerce hooks and functions.
-// if ( class_exists( 'WooCommerce' ) ) {
-// 	require TIK_PARENT_INC_DIR . '/woocommerce.php';
-// }
-
 // Load hooks.
 require TIK_PARENT_INC_DIR . '/hooks/hooks.php';
 require TIK_PARENT_INC_DIR . '/hooks/header.php';
@@ -438,7 +427,8 @@ add_shortcode( 'show_breadcrumb', 'wpc_elementor_breadcrumb_shortcode');
 function add_description_to_menu($item_output, $item, $depth, $args) {
     if (strlen($item->description) > 0 ) {
         // append description after link
-        $item_output .= sprintf('<span class="description">%s</span>', esc_html($item->description));
+//         $item_output .= sprintf('<span class="description">%s</span>', esc_html($item->description));
+		$item_output = str_replace( $args->link_after . '</a>', '<br/><div class="description">' . esc_html($item->description) . '</div>' . $args->link_after . '</a>', $item_output );
 
         // insert description as last item *in* link ($input_output ends with "</a>{$args->after}")
         //$item_output = substr($item_output, 0, -strlen("</a>{$args->after}")) . sprintf('<span class="description">%s</span >', esc_html($item->description)) . "</a>{$args->after}";
@@ -488,43 +478,13 @@ function wpc_elementor_parentID_shortcode( $atts ) {
 }
 add_shortcode( 'show_related_pages', 'wpc_elementor_parentID_shortcode');
 
-// Adding google fonts {cuz W3TC is creating issues in CSS}
 
- function myprefix_enqueue_google_fonts() { 
-	wp_enqueue_style( 'Josefin Sans', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap' ); 
-	wp_enqueue_style( 'Lato', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap' ); 
-
+function tikaj_enqueue_fonts() {
+    wp_enqueue_style( 'google-font-josefin-sans', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap' );
+    wp_enqueue_style( 'google-font-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap' );
+    wp_enqueue_style( 'google-font-open-sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap' );
+    wp_enqueue_style( 'google-font-playfair-display', 'https://fonts.googleapis.com/css2?family=playfair+display:ital,wght@700;1,800&display=swap' );
+    wp_enqueue_style( 'google-font-source-serif-pro', 'https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap' );
+    wp_enqueue_style( 'custom-font-themegrill-icons', get_template_directory_uri() . '/assets/fonts/themegrill-icons.css', array(), '1.0.0', 'all' );
 }
-add_action( 'wp_enqueue_scripts', 'myprefix_enqueue_google_fonts' ); 
-
-// Redirecting Urls
-function redirect_to_vapt() {
-    if ( is_page('services/penetration-testing-vulnerability-assessment/') && ! is_user_logged_in() ) {
-      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/'); 
-	  exit;
-    }
-	else if ( is_page('services/penetration-testing-vulnerability-assessment/web-application-testing/') && ! is_user_logged_in() ) {
-      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/web-application-testing/'); 
-	  exit;
-    }
-	else if ( is_page('services/penetration-testing-vulnerability-assessment/mobile-application-testing/') && ! is_user_logged_in() )     	  {
-      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/web-application-testing/'); 
-	  exit;
-    }
-	
-	else if ( is_page('services/penetration-testing-vulnerability-assessment/internet-of-things-testing/') && ! is_user_logged_in() )     	  {
-      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/internet-of-things-testing/'); 
-	  exit;
-    }
-	
-	else if ( is_page('services/penetration-testing-vulnerability-assessment/scada/') && ! is_user_logged_in() )     	  {
-      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/scada/'); 
-	  exit;
-    }
-	
-	else if ( is_page('services/penetration-testing-vulnerability-assessment/code-review/') && ! is_user_logged_in() )     	  {
-      wp_redirect( 'https://www.tikaj.com/services/vulnerability-assessment-penetration-testing/code-review/'); 
-	  exit;
-    }
-}
-add_action( 'template_redirect', 'redirect_to_vapt' );
+add_action( 'wp_enqueue_scripts', 'tikaj_enqueue_fonts' );

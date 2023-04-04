@@ -39,7 +39,7 @@ class Tik_Dashboard {
 
 	public function option_page() {
 		$theme        = wp_get_theme();
-		$support_link = ( tik_is_tik_pro_active() ) ? 'https://tiktheme.com/support-ticket/' : 'https://wordpress.org/support/theme/tik/';
+		$support_link = ( tik_is_tik_pro_active() ) ? 'https://tik.co/wp-20/support-ticket/' : 'https://wordpress.org/support/theme/tik/';
 		?>
         <div class="wrap">
             <div class="tik-header">
@@ -66,7 +66,7 @@ class Tik_Dashboard {
                         <div class="welcome-panel-column">
                             <h3><?php esc_html_e( 'Get Started', 'tik' ); ?></h3>
                             <a class="button button-primary button-hero"
-                               href="<?php echo esc_url( 'https://docs.tiktheme.com/en/category/getting-started-1470csx/' ); ?>"
+                               href="<?php echo esc_url( 'https://tik.co/wp-20' ); ?>"
                                target="_blank"><?php esc_html_e( 'Learn Basics', 'tik' ); ?>
                             </a>
                         </div>
