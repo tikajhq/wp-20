@@ -480,11 +480,7 @@ add_shortcode( 'show_related_pages', 'wpc_elementor_parentID_shortcode');
 
 
 function tikaj_enqueue_fonts() {
-    wp_enqueue_style( 'google-font-josefin-sans', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap' );
-    wp_enqueue_style( 'google-font-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap' );
-    wp_enqueue_style( 'google-font-open-sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap' );
-    wp_enqueue_style( 'google-font-playfair-display', 'https://fonts.googleapis.com/css2?family=playfair+display:ital,wght@700;1,800&display=swap' );
-    wp_enqueue_style( 'google-font-source-serif-pro', 'https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap' );
-    wp_enqueue_style( 'custom-font-themegrill-icons', get_template_directory_uri() . '/assets/fonts/themegrill-icons.css', array(), '1.0.0', 'all' );
+	wp_enqueue_style( 'Josefin Sans', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap' ); 
+	wp_enqueue_style( 'Lato', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap' ); 
 }
 add_action( 'wp_enqueue_scripts', 'tikaj_enqueue_fonts' );
