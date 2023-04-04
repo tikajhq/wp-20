@@ -1,14 +1,14 @@
 /*!
 Theme Name: TIKAJ 
 Theme URI: https://tikaj.com/
-Author: Mansoor Ahmad
-Author URI: https://mansoorahmad.com
-Description: Tik is flexible, fast, lightweight and modern multipurpose theme that comes with many starter free sites (currently 10+ free starter sites and more will be added later) that you can use to make your site beautiful and professional. Check all the starter sites at https://tik.co/wp-20. Suitable for personal blog, portfolio, WooCommerce stores, business websites and niche-based sites (like Cafe, Spa, Charity, Yoga, Wedding, Dentist, Education etc) as well. Works with Elementor plus other major page builders so you can create any layout you want. The theme is responsive, Gutenberg compatible, SEO friendly, translation ready and major WordPress plugins compatible.
-Version: 1.4.4
+Author: TIKAJ
+Author URI: https://www.tikaj.com
+Description: TIKAJ-WP-20 is flexible, fast, lightweight and modern multipurpose theme that comes with many starter free sites (currently 10+ free starter sites and more will be added later) that you can use to make your site beautiful and professional. Check all the starter sites at https://tik.co/wp-20. Suitable for personal blog, portfolio, WooCommerce stores, business websites and niche-based sites (like Cafe, Spa, Charity, Yoga, Wedding, Dentist, Education etc) as well. Works with Elementor plus other major page builders so you can create any layout you want. The theme is responsive, Gutenberg compatible, SEO friendly, translation ready and major WordPress plugins compatible.
+Version: 1.5.4
 Tested up to: 5.4
 Requires PHP: 5.6
-Text Domain: tik
-Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, rtl-language-support
+Text Domain: tikaj.com
+Tags: internal
 */
 
 #page {
@@ -2855,6 +2855,6 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, c
       background-position: 0 100%;
   }
   
-  
+
   /*# sourceMappingURL=style.css.map */
   
