@@ -15,11 +15,7 @@ WP-20 is flexible, fast, lightweight and modern multipurpose theme that comes wi
 For more information about WP-20 please go to tikaj.pages.tik.co/wp-20/
 
 == Installation ==
+npx sass --watch style.scss style.css                      
 
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Tik in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-4. Go to tikaj.pages.tik.co/wp-20/ for a guide on how to customize this theme.
-5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 

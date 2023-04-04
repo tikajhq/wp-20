@@ -2830,3 +2830,106 @@ select {
 
 
 @import 'override';
+
+
+  /*
+   * 
+   * Blog Post 
+   * 
+   */
+  
+   .entry-title {
+    /*display:none !important;*/
+}
+article.tik-article{
+    overflow:unset;
+}
+body #content{
+    /*margin-top:10px;*/
+}
+
+body.single-post article  h1,
+body.single-post article h2,
+body.single-post article p,
+body.single-post article i,
+body.single-post article a,
+body.single-post article .first-letter {
+  color: rgba(0, 0, 0, 0.84);
+  text-rendering: optimizeLegibility;
+}
+
+
+body.single-post article h2, 
+body.single-post article h3, 
+body.single-post article h4,
+body.single-post article h5,  
+body.single-post article h6, 
+body.single-post article h7 {
+  font-family: 'Source Serif Pro',"Open Sans" !important; 
+  font-size: 1.4rem;
+  margin-top: 1.4rem;
+    
+  text-align: left;
+  letter-spacing: -0.05rem;
+}
+
+body.single-post article  h1 {
+  font-family: "Playfair Display", serif !important;
+  font-size: 3rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+body.single-post article h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  padding: 0;
+  margin: 56px 0 -13px -1.883px;
+  line-height: 2.8rem;
+}
+
+body.single-post article h3{
+  font-size: 2.0rem;
+  font-weight: 700;
+}
+
+
+body.single-post article,
+body.single-post article p,
+body.single-post article i,
+body.single-post article .entry-content a,
+body.single-post article ul,
+body.single-post article ol {
+  margin-top: 1.5rem;
+  font-family: 'Source Serif Pro',"Open Sans" !important; 
+  font-size: 1.2rem;
+  letter-spacing: -0.001em;
+  line-height: 2rem;
+}
+
+body.single-post article li {
+  margin-bottom: 0.5rem;
+}
+
+body.single-post article .entry-content a {
+  margin-top: 1.8rem;
+  font-family: 'Source Serif Pro',"Open Sans" !important; 
+  font-size: 1.2rem;
+  letter-spacing: -0.001em;
+  line-height: 2rem;
+ color: royalblue;
+  overflow: hidden;
+  background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  text-decoration: none;
+}
+
+body.single-post article .entry-content a:hover {
+    background-position: 0 100%;
+}
+
