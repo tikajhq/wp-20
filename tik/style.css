@@ -44,6 +44,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, c
 /*=============================================
 =            Variables            =
 =============================================*/
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap");
 #page {
   margin-top: 85px;
 }
@@ -61,6 +62,10 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, c
   z-index: 5;
 }
 
+@font-face {
+  font-family: "themegrill-icons";
+  src: url("assets/fonts/themegrill-icons.eot?5d42b271f668d2d6461ba91fc5a5a839?#iefix") format("embedded-opentype"), url("assets/fonts/themegrill-icons.woff2?5d42b271f668d2d6461ba91fc5a5a839") format("woff2"), url("assets/fonts/themegrill-icons.woff?5d42b271f668d2d6461ba91fc5a5a839") format("woff");
+}
 /*=============================================
 =            Normalize            =
 =============================================*/
