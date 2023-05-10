@@ -3232,7 +3232,6 @@ CSS TO FIX BLOCK BUTTON IN RECENT POSTS
 
 .single .entry-header {
   position: relative;
-  padding-top: 250px;
 }
 
 .single .entry-header h1 {
@@ -3288,6 +3287,10 @@ body.single-post article > * + * {
   margin-block-end: 0;
 }
 
+body.single-post article h1 {
+  font-weight: 800;
+}
+
 body.single-post article h1,
 body.single-post article h2,
 body.single-post article p,
@@ -3340,10 +3343,6 @@ body.single-post article ol {
   font-size: 1.2rem;
   letter-spacing: -0.001em;
   line-height: 2rem;
-}
-
-body.single-post article li {
-  margin-bottom: 0.5rem;
 }
 
 body.single-post article .entry-content a {
