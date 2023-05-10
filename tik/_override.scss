@@ -780,81 +780,6 @@ overflow-y: auto;
     display:none!important;
   }
 }
-/* ---------------------------
- * ==  Blog  ==
- * ----------------------------*/
-
-.tg-site-layout--default .post-thumbnail{
-  margin:0;
-/* 	margin-bottom:-80px; */
-  left: 0;
-right: 0;
-    top: 40px;
-width: 100%;
-height: 300px;
-  position:absolute; 
-  z-index:0;
-}
-.tg-site-layout--default .post-thumbnail img{
-  width: 100%;
-height: 300px;
-  object-fit:cover;
-}
-.tg-site-layout--default .post-thumbnail::before{
-  content:'';
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  width:100%;
-  height:100%;
-  background:linear-gradient(rgba(255,255,255,0.5),white);
-}
-
-
-.single .entry-header{
-  position:relative;
-  padding-top:250px;
-}
-
-.single .entry-header h1
-{
-    font-size:3rem;
-}
-.single .entry-meta,.single .entry-content{
-  position:relative;
-}
-.single  .entry-header::before{
-content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-/*   height: 100%; */
- background: white;
--webkit-filter: blur(10px);
-filter: blur(10px);
-transform: scaleX(2) translateY(0px);
-}
-.nav-previous{
-  padding-right:8px;
-}
-.nav-next{
-  padding-left:8px;
-}
-@media only screen and  (max-width:768px){
-  .tg-site-layout--default .post-thumbnail img, .tg-site-layout--default .post-thumbnail {
-    height:150px;
-  }
-  .single .entry-header{
-  padding-top:100px;
-}
-  .single .entry-header h1
-  {
-      font-size:2.5rem;
-  }
-}
 
 /* ---------------------------
  * ==  Blog single page css  ==
@@ -903,32 +828,6 @@ body,p{
   height:max-content;
 }
 
-/* ---------------------------
- * ==  Mautic form CSS  ==
- * ----------------------------*/
-/* Default button state */
-.mauticform-button-wrapper .mauticform-button.btn.btn-default{
-  color: #ffffff;
-  background-color: #e51015;
-  border-color: #e51015;
-  padding:10px 15px;
-}
-/* Focused button state */
-.mauticform-button-wrapper .mauticform-button.btn.btn-default:hover,.mauticform-button-wrapper .mauticform-button.btn.btn-default:focus{
-  color: #ffffff;
-  background-color: #ca0b10;
-  border-color: #e51015;
-  padding:10px 15px;
-}
-/* Disabled button state */
-.mauticform-button-wrapper .mauticform-button.btn.btn-default:disabled
-{
-color: #3c3c3c;
-    background-color: lightgrey;
-    border-color: gray;
-    cursor: not-allowed;
-  padding:10px 15px;
-}
 
 /* ---------------------------
  * ==  Posts page css updates ==
